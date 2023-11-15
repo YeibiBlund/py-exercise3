@@ -7,13 +7,34 @@ Exercise 3: Basic calculator
 import random
 
 def guess_the_number():
-  """
-    Using loops, implement a guessing game.
-    Guess the number (1-10):
-    messages: Too low, Too high, Try again, Congratulations!
-  """
-  # fix code
-  print("Guess the number (1-10):")
+    intentosRealizados = 0
+
+    print('¡Hola! ¿Cómo te llamas?')
+    miNombre = input()
+
+    número = random.randint(1, 10)
+
+    print('Bueno, ' + miNombre + ', estoy pensando en un número entre 1 y 10.')
+    while intentosRealizados < 6:
+        print('Intenta adivinar.') 
+
+        estimación = int(input())
+
+        intentosRealizados += 1
+        if estimación < número:
+            print('Tu estimación es muy baja.')
+        if estimación > número:
+            print('Tu estimación es muy alta.')
+        if estimación == número:
+            break
+
+    if estimación == número:
+        intentosRealizados = str(intentosRealizados)
+        print('¡Buen trabajo, ' + miNombre + '! ¡Has adivinado mi número en ' + intentosRealizados + ' intentos!')
+    if estimación != número:
+        número = str(número)
+        print('Pues no. El número que estaba pensando era ' + número)
+
 
 
 def multiplication_table():
