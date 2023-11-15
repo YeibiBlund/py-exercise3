@@ -12,8 +12,11 @@ def guess_the_number():
     Guess the number (1-10):
     messages: Too low, Too high, Try again, Congratulations!
   """
-  # fix code
-  print("Guess the number (1-10):")
+  
+  numeroRandom = random.randint(1, 10)
+  
+  
+ 
 
 
 def multiplication_table():
@@ -32,14 +35,25 @@ def basic_calculator():
     3. Enter the second number: 20
     4. print 10 + 20 => Result: 30
   """
-  num1 = input("Enter the first number: ")
-  operator = input("Enter an operator (+, -, *, /): ")
-  num2 = input("Enter the second number: ")
-
-  result = None # fix code
-
-  print("{num1} {operator} {num2} => Result:", result)
-
+  while True:
+    
+    num1 = float(input("Enter the first number: "))
+    operator = input("Enter an operator (+, -, *, /): ")
+    num2 = float(input("Enter the first number: "))
+    
+    if operator == "+":
+      result = num1 + num2
+    elif operator == "-":
+      result = num1 - num2
+    elif operator == "*":
+      result = num1 - num2
+    elif operator == "*":
+      result = num1 - num2
+    else:
+      print ("El operador no es valido") 
+    print (result)
+    break
+   
 
 def main():
   # input choice between 1-3 function
