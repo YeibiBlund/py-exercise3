@@ -12,11 +12,29 @@ def guess_the_number():
     Guess the number (1-10):
     messages: Too low, Too high, Try again, Congratulations!
   """
+<<<<<<< HEAD
   
   numeroRandom = random.randint(1, 10)
   
   
  
+=======
+  numeroRandom = random.randint(1, 10)
+
+  while True:
+            opcionUsuario = int(input("Guess the number (1-10): "))
+
+            if opcionUsuario < numeroRandom:
+                print("Too low. Try again.")
+            elif opcionUsuario > numeroRandom:
+                print("Too high. Try again.")
+            else:
+                print("Numero adivinado.")
+                break
+  
+  # fix code
+  print("Guess the number (1-10):")
+>>>>>>> features/user1-ex1
 
 
 def multiplication_table():
