@@ -6,39 +6,84 @@ Exercise 3: Basic calculator
 
 import random
 
+import random
+
 def guess_the_number():
-  """
-    Using loops, implement a guessing game.
-    Guess the number (1-10):
-    messages: Too low, Too high, Try again, Congratulations!
-  """
-  # fix code
-  print("Guess the number (1-10):")
+    intentosRealizados = 0
+
+    print('¡Hola! ¿Cómo te llamas?')
+    miNombre = input()
+
+    número = random.randint(1, 10)
+
+    print('Bueno, ' + miNombre + ', estoy pensando en un número entre 1 y 10.')
+    while intentosRealizados < 6:
+        print('Intenta adivinar.') 
+
+        estimación = int(input())
+
+        intentosRealizados += 1
+        if estimación < número:
+            print('Tu estimación es muy baja.')
+        if estimación > número:
+            print('Tu estimación es muy alta.')
+        if estimación == número:
+            break
+
+    if estimación == número:
+        intentosRealizados = str(intentosRealizados)
+        print('¡Buen trabajo, ' + miNombre + '! ¡Has adivinado mi número en ' + intentosRealizados + ' intentos!')
+    if estimación != número:
+        número = str(número)
+        print('Pues no. El número que estaba pensando era ' + número)
+
 
 
 def multiplication_table():
-  """
-    Using a while/for loops, implement a multiplication table.
-  """
-  # fix code
-  print("multiplication_table for {number}")
+    number = int(input("Ingrese el número para la tabla de multiplicación: "))
+    print(f"Tabla de multiplicación para {number}:")
+    for i in range(1, 11):
+        print(f"{number} x {i} = {number * i}")
+
 
 
 def basic_calculator():
-  """
-    Using a while/for loops, implement a basic calculator.
-    1. Enter the first number: 10
-    2. Enter an operator (+, -, *, /): +
-    3. Enter the second number: 20
-    4. print 10 + 20 => Result: 30
-  """
-  num1 = input("Enter the first number: ")
-  operator = input("Enter an operator (+, -, *, /): ")
-  num2 = input("Enter the second number: ")
+    def suma(num1, num2):
+        return num1 + num2
 
-  result = None # fix code
+    def resta(num1, num2):
+        return num1 - num2
 
-  print("{num1} {operator} {num2} => Result:", result)
+    def multiplicacion(num1, num2):
+        return num1 * num2
+
+    def division(num1, num2):
+        return num1 / num2
+
+    print("Por favor, elige una operación:")
+    print("1. Suma")
+    print("2. Resta")
+    print("3. Multiplicación")
+    print("4. División")
+
+    opcion = input("Ingresa una opción (1/2/3/4): ")
+    num1 = float(input("Ingresa el primer número: "))
+    num2 = float(input("Ingresa el segundo número: "))
+
+    if opcion == '1':
+        print(num1, "+", num2, "=", suma(num1, num2))
+    elif opcion == '2':
+        print(num1, "-", num2, "=", resta(num1, num2))
+    elif opcion == '3':
+        print(num1, "*", num2, "=", multiplicacion(num1, num2))
+    elif opcion == '4':
+        if num2 == 0:
+            print("No se puede dividir por cero.")
+        else:
+            print(num1, "/", num2, "=", division(num1, num2))
+    else:
+        print("Opción inválida")
+
 
 
 def main():
