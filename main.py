@@ -6,7 +6,7 @@ Exercise 3: Basic calculator
 
 import random
 
-import random
+
 
 def guess_the_number():
     intentosRealizados = 0
